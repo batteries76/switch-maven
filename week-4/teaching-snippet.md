@@ -36,7 +36,8 @@ const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
-let album = new Schema({
+let album = new Schema(
+	{
 		title: {
 			type: String
 		},
@@ -52,7 +53,31 @@ let album = new Schema({
 module.exports = mongoose.model("albums", album)
 ```
 
+*here explain the code above*
+- We are requiring in the package
+- We are getting the Schema part of the Mongoose package
+- We are defining an album broadly
+- We are exporting it out
+- Explain about connecting to the particular collection, and naming more broadly
 
 ### Validations
 
-Validations are the fine tuning of the models. This is the way that we define 
+Validations are the fine tuning of the models. This is the way that we define the specifics of how we need the data to look. For example, we can ssay whether a particular field is required (an album is not really complete until it at least has a title and artist), or even something more specific like the format of an email. 
+
+```
+let album = new Schema(
+	{
+		title: {
+			type: String,
+			required: true
+		},
+		artist: {
+			type: String,
+			required: true
+		},
+	},
+	{ 
+	  collection: "Albums" 
+	}
+)
+```
