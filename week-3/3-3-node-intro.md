@@ -7,6 +7,7 @@ The main differences are that Node won't have access to those browser specific A
 ### Downloading Node
 
 First we will need to download Node.
+
 https://nodejs.org/en/download/
 
 
@@ -25,6 +26,7 @@ console.log(randVal)
 ```
 
 And now we can run it from the command line.
+
 `> node myFirstProgram.js`
 
 Examples, but don't overdo it.
@@ -129,7 +131,9 @@ We have taken the raw data, and turned it into something that we can now code wi
 A URL is a more complicated element than we often bother to think about. It is the first way that we will discuss that a browser will send information to a server, which is again something we don't think a lot about. The URL carries information that the server will use to determine the content that will be sent back, and for this information to make sense and be useful it must be in a particular format. 
 
 Here I am going to throw it back to you. Have a look at the following link:
+
 https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL
+
 What I would like you to attempt (in pairs if possible), is to use Node to write a URL parser.
 
 ### Node packages
@@ -138,20 +142,26 @@ The exercise you are about to embark on may have some tricky elements that might
 
 #### Yarn
 Head here to install yarn:
+
 https://classic.yarnpkg.com/en/docs/install/#mac-stable
 
 We now have the power to install some code that others have written that we can make use of. We are using Yarn to download thesse packages, but also to keep track of them. When we use them in our code they are called dependencies (because our code now depends on them). Yarn will help us to keep track of this by adding them into a file that is called `package.json`. 
 
 The `package.json` file is the accumulation of all the dependencies for our project (and has a few other tricks up its sleve, which we will get to in time). We need to initialise it with this command:
+
 `> yarn init`
+
 and answer the questions that are asked of us. Many can be ignored, but it is worth paying attention to what they are to get a feel for what is happening.
 This website goes into some more detail:
+
 https://classic.yarnpkg.com/en/docs/usage
 
 You will also notice that a folder called `node_modules` has turned up in the current directory. This is where the code that you are importing will be kept. We will talk a little bit more about this down the track, but for now you can ignore it (or investigate as you like), but do not make changes to this file.
 
 The other main aspect to this way of storing dependencies is that the project can now be shipped to other devs and they are able to install all of the dependencies locally with one command:
+
 `> yarn install`
+
 which will save everyone a considerable amount of time.
 
 ### Exercise 1: Package search

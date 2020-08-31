@@ -72,10 +72,13 @@ const server = http.createServer(
 )
 ```
 _**Can anyone take a guess what it is that we are looking at here?**_
-The most basic thing that we can say about this, is that it is a function call. We are calling the function   `createServer()` with some arguments, and this function will run, and then return something - as all functions will do (although the return value may not always be particularly important). We can tell it's a function call because of the parentheses, and because it's not a function definition. But where does thias function come from if we didn't define it ourselves?
+
+The most basic thing that we can say about this, is that it is a function call. We are calling the function `createServer()` with some arguments, and this function will run, and then return something - as all functions will do (although the return value may not always be particularly important). We can tell it's a function call because of the parentheses, and because it's not a function definition. But where does thias function come from if we didn't define it ourselves?
 
 Let's have a look at what else can we tell from this code. Well, we also have a better idea of what was returned out of that `require()` statement. 
-_**Can you tell me what type of thing was stored in the constant called `http`? (This can be a very broad definition.)
+
+_**Can you tell me what type of thing was stored in the constant called `http`?**_ (This can be a very broad definition.)
+
 We now know that it was an object. We can tell this because of the syntax `http.createServer`. We now can tell that the `'http'` module we called at the top of the file must export this object. We can even start to think about how that object might look - although only a small portion of it:
 ```js
 http = {
@@ -100,7 +103,9 @@ const server = http.createServer((req, res) => {
 Here I am adding back in the callback. We can see that those mysterious `req` and `res` objects that are being provided to our callback by the `createServer` function. We have no control over what these objects are (and we will discuss what they might look a bit like soon), but we can call them anything we like. We could have written this line `http.createServer((x, y) => {` if we liked, but we call them `req` and `res` somewhat by convention, but also because these two objects are the JS representations of the incoming HTTP request object and the outgoing HTTP response object respectively. 
 
 Furthermore, we can see that the request and response objects we have been disucssing are in fact JS objects here. 
+
 _**Why do we know this?**_
+
 Again, we know this because of the `.` we can see in lines like this:
 `res.statusCode = 200`.
 In the example at hand we are not making use of the incoming request object. But we are making some alterations to the response object as seen in this line where we are setting the response code to 200. We can see that this `res` object also has at least two functions attached to it, and these are `setHeader(a, b)`, which can take two string arguments (at least), and `end(a)` which can take at least one string argument.
@@ -129,7 +134,7 @@ Here I'm not going to dwell on the details as before. We can see that the `serve
 
 Here, as with `createServer` and the `http` object that we imported, there is only so much that we can say, and the magic is happening behind the scenes in the http module. This is where our little node program really gets going, and turns our computer into a server - albeit one that only runs locally. It is now listening on port 3000, we can send a request to it from the browser by entering the correct URL, and our server sends a ressponse.
 
-#### Conclusion
+#### Conclusion (Basic Server)
 No need to do this level of analysis every time you run some code. Most often you will just be trying to get something to work, and playing around with the arguments to functions. But every dev will hit points where they no longer understand what is happening, and just poking at arguments is not working anymore. At these times it can be useful to be able to break apart the code a bit, and demystify what you can so that you might be able to narrow down the search, or at least feel a little less lost in the code maze.
 
 It's also important to mention here that if some of that was hard to understand, that's to be expected, and some of the elements from all of these lessons will become clearer over time. Feel free to ask me any questions that you might have.
@@ -154,13 +159,19 @@ app.listen(port, () => {
 })
 ```
 To get this to work we are going to have to import the Express package. We learned earlier how to load that package in to where we need it:
+
 `> yarn add express`
+
 While we are adding packages, we are going to add one more, and digress briefly to talk about scripts in the `package.json`. 
+
 `> yarn add nodemon`
+
 Nodemon is a program we can use to watch for changes to our project (NODE MONitor), and it will rerun the script whenever we save those changes, meaning that we don't have to stop and restart the server every time to make a change to the file - nodemon will do that for us (in this instance).
 
 Once it is installed, we can run it from the terminal:
+
 `> nodemon server.js`
+
 Have a go and see how it's going. Make a change to the file, and save it, and see the outcome. 
 
 ### package.json scripts
@@ -196,11 +207,17 @@ We are going to ammend the file as follows:
 }
 ```
 You can see above that we have added in a section for scripts, and a particular script that we want to run. `dev` is the 'name' of this script, and we can make use of this like so:
+
 `> yarn run dev`
-Here we are asking yarn to run the script in the `package.json` file called dev, which is the same as running
+
+Here we are asking yarn to run the script in the `package.json` file called dev, which is the same as running:
+
 `> nodemon server.js`
+
 This has two beneifts. 
+
 The first is that while in this instance we aren't saving a heap of time, we are saving a little bit by having an alias for starting the program. However, sometimes the command to run a particular aspect of your program might be very complicated. In that instance we are saving considerable time not typing it our searching back through the terminal commands. 
+
 The second aspect is that you may forget the command (yes, this happens), and in most instances you are unlikely to be the only person working on the project. 
 
 Run the command through the `package.json` via yarn, and then check the response in the browser.
@@ -210,6 +227,7 @@ To get the feel for these scripts, write in a few more possible terminal command
 
 ### Code breakdown
 This time around we aren't going to go into this in as much detail, and many elements here are similar. In fact, the chances are that the Express code uses the Http module in the background. But there will be a few things to put out here. 
+
 After requiring in Express, we now have something stored in the constant `express`. 
 Given the following code, what type of thing is `express`?
 ```js
@@ -230,6 +248,7 @@ app.listen(port, () => {
 We can see that the `app` object has at least two functions attached to it: `get`, and `listen`. We aren't going to worry about `listen` much here, as we discussed a similar method above. Here we are more interested in the `get` function.
 
 _First off, what can you tell me about this function, defined on the `app` object?_
+
 firstly we can see it takes two arguments (at least), one that is a string, and the other is a callback function. Inside that callback function we can see code that bears similarities to the code we came across in the simple server. The big difference that we see is that we are adding a 'route', and responding in a particular way to this route. 
 
 To make this clearer though, let's expand the code, and then talk about what is going on here:
@@ -270,6 +289,7 @@ While it is always good to have good instruction, what we are doing here is also
 ### Exercise 4: Query Strings
 To add a bit more functionality to our back end. We know from yesterday that a URL can contain what is known as a query string. We also know that Express is doing us a favour and creating a request object for us. Use the docs for URLs and for Express (or any resource you choose), and see if you can complete the following tasks:
 1. Send a query string along with the `/grasshopper` path, and have it set the key `number` to 3. (Please ask me if this isn't clear.) In the `'/grasshopper'` route in your Express app, send back a small HTML list with three items if number is set to 3, and an empty list otherwise. 
+
 ...
 
 ### Request Methods (time permitting)
