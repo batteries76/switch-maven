@@ -186,6 +186,9 @@ If you get this far you could do the same for an HTTP response, and see how you 
 
 As a final uber challenge you might think about how you would parse the HTML that could be sent in the response. This is a very very difficult task, so I would recommend just putting a little time into thinking about how you might go about this, and what type of functions you might need to make this work. With the difficulty and time available I think that pseudo code might be the way to go here. 
 
+### Extension (optional for now): Response Codes
+Have a look at the various response codes. Can also do a bit more diving into the structure of various aspects of the HTTP objects, and various.
+
 ### Summary
 We covered a lot of content here, and many concepts, some of which will take time to sink in fully. But let's try to draw all of what we have done together so that we might have a sense of the overview from today.
 

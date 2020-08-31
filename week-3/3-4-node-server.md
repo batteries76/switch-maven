@@ -294,7 +294,9 @@ To add a bit more functionality to our back end. We know from yesterday that a U
 
 ### Request Methods (time permitting)
 It might have occured to you that the `.get()` method is interestingly named. 
+
 ...
+
 Can expand out here if needed.
 
 Other extensions:
