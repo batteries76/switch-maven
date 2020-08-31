@@ -139,7 +139,6 @@ What I would like you to attempt (in pairs if possible), is to use Node to write
 ### Node packages
 The exercise you are about to embark on may have some tricky elements that might benefit from the ecosystem that Node brings with it in the form of packages. These are not available in the JS environment (although this issue is complicated). Keeping things simple for now, we are going to have a brief run through how to import packages into your program, and how to then make use of them.
 
-
 #### Yarn
 Head here to install yarn:
 
@@ -191,9 +190,11 @@ As a final uber challenge you might think about how you would parse the HTML tha
 We covered a lot of content here, and many concepts, some of which will take time to sink in fully. But let's try to draw all of what we have done together so that we might have a sense of the overview from today.
 
 **Node**
+
 First we talked about Node, which is backend JS. It is just a way to write JS code that can be run from the OS itself, rather than needing to be run in a browser. Node comes with libraries that we don't have in JS (file system libs, for example), but also lacks the functions for dealing with browser. Because Node can run from the terminal within the OS, we can also make a server using Node - something we will do tomorrow.
 
 **Front and backends, formats and protocols, HTTP and the web**
+
 The front-end, or client, for our purposes, is the browser. The backend, that we now have the ability to control with Node, is often a server (which we are about to get to). The most basic pattern to understand about the internet is that browsers make HTTP requests, and servers (computers that are connected to the internet and listening to HTTP traffic), are waiting to send an HTTP response. 
 
 But to be able to efficiently understand the messages being send to and fro, it helps to have a set format, or protocol. In this case we have the HTTP protocol. But the concept of protocols and formats is a more general one, and we can see several instances of this same concept (CSVs, URLs, and HTTP). 
