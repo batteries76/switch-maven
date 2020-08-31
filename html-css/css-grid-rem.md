@@ -175,3 +175,10 @@ button {
 </body>
 </html>
 ```
+
+### Grid Areas
+- Here we are looking at how to have the items we are placing on the grid take up more than one grid cell.
+- The default for grid is that every item will take up one space on the grid.
+- We can use several strategies to place the items on the grid, but we need to follow some rules:
+    1. The item must be _self-contiguous_ - that is, one item can take up multiple spaces, but they must be adjacent.
+    2. The item can take up several rows, or columns, or an area (several rows and columns), but the shape is always a rectangle. (A square is just a particular type of rectangle.) This means it cannot form an L, or any other complex formation.
