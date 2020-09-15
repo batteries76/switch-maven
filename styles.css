@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: red; */
+}
+
+#wrapper-nav {
+    background-color: brown;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#links-container {
+    background-color: red;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#first-nav {
+    background-color: yellow;
+}
+
+#second-nav {
+    background-color: blue;
+}
+
+#third-nav {
+    background-color: blueviolet;
+}
+
+#logo-container {
+    background-color: chartreuse;
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

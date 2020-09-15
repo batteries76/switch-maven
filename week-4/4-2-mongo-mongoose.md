@@ -19,8 +19,10 @@ There are many extensions that could be built from there.
 - Mongoose, and Mongoose models
 - Exercise around these models and searching
 
-### Mongoose Models 
+### DBs
+In the last lesson we started setting up 
 
+### Mongoose Models 
 We have set up our MongoDB locally, and we are also set up in the cloud. We have practiced getting documents in and out of collections, and now we are going to begin using a tool to make that easier, and also to help us with some validations. That tool is MongooseJS, more usually called Mongoose.
 
 First lets talk more generally about what it is that we are doing here. 
