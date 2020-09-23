@@ -1,9 +1,7 @@
 ## Arrays
 
 ### Summary
-This summary are the dot points that you'd need to have a go at the array challenges. There is more to say about arrays of course, but it's good to also get into using them and playing around with code. Then we can layer the deeper understanding over this baseline.
-
-There is some mention of loops that can be ignored for now, and you can return to these sections after we learn loops. 
+This summary are the dot points that you'd need to be across to have a go at the array challenges. There is more to say about arrays of course, but it's good to also get into using them and playing around with code. Then we can layer the deeper understanding over this baseline.
 
 - We have been thinking of variables as named storage spaces for data.
 - Arrays are like having a whole warehouse of storage, or think of them as a series of storage buckets. 
@@ -16,16 +14,17 @@ const myPets = ["Garfield", "Odie", "Snoopy", "Woodstock", "Bugs", "Winnie"]`
 - We can access the contents of the arrays we create by referencing the name of the array, and then the index, eg, `myPets[2]` would access the fourth element of the array that we called `myPets`, and that would be the string `"Snoopy"`. 
 - Once we have made our array, we have various tools at our disposal. 
 - We showed that we can search through our array using a `while` loop (and later we will show even simpler ways to loop through our array).
-- We didn’t discuss these much, but we can pop the last element off the end of the array: `let lastElement = myPets.pop()`.
+- We can pop the last element off the end of the array: `let lastElement = myPets.pop()`.
 - We can also add an element to the array: `myPets.push("Gromit")`
 - Run the following code to see these in action:
 ```js
 const myPets = ["Garfield", "Odie", "Snoopy", "Woodstock", "Bugs", "Winnie"]
 pet = pets.pop()
 console.log(pet)
-pets.push("Snoopy")
+pets.push("Oscar")
 console.log(pets)	
 ```
+- Most languages, including JS, have many built in functions to find elements, or remove certain elements, or transform the array, or chop the array up. I would recommend having a look for these functions first - although rolling your own functions is also fantastic practice. 
 - I would recommend having a look at the Mozilla docs on JS docs (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for some more interesting functions that apply to arrays.
 
 ### Some more detail

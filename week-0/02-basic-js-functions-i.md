@@ -210,4 +210,3 @@ Here is an example of working code that no one wants to deal with:
 ```
 Get in the habit of coding for others because it's good practice, but it will also help you when you need to debug you code, or return to your code in the future.
 
-### Next: Functions and the DOM

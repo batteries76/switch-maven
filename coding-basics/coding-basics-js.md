@@ -96,7 +96,7 @@ In this case the data we are trying to represent could be first and last names, 
 
 If someone doesn't know that "36" is his age, then what does that number mean to them? How is this useful?
 
-The object datatype (or data-structure) helps us out here because we have keys that can denote and describe the data we are looking at, and these keys have a value.
+The _object_ datatype (or data-structure) helps us out here because we have keys that can denote and describe the data we are looking at, and these keys have a value.
 So for the data above we might have something like:
 
 ```js
@@ -112,8 +112,8 @@ You can see that here we have contained in one structure all the things that we 
 
 `federer.age` gives us back the integer 36, for example.
 
-You can think of all that we have seen so far as falling into two levels. The elementary datatypes are the building blocks of everything else that happens. They are _string_, _float_, _integer_, _boolean_, and _nil_. These are the basic structures: the elements that we can use to build our world.
-And then we also have two useful structures that are inbuilt into Ruby to help us combine these lower level elements: arrays and hashes.
+You can think of all that we have seen so far as falling into two levels. The elementary datatypes are the building blocks of everything else that happens. They are _string_, _number_(_float_, _integer_), _boolean_, _undefined_, and _null_. These are the basic structures: the elements that we can use to build our world.
+And then we also have two useful structures that are inbuilt into JS to help us combine these lower level elements: _arrays_ and _objects_.
 
 In the same way as we are all made from the same elements, but just in different combinations, all code ever is is those basic datatypes being pushed around all over the place in larger structures.
 
@@ -140,7 +140,7 @@ We have now overwritten our array with the integer 8. We probably wouldn't want 
 
 We haven't got to objects, but those are the next ones to get our teeth into, and are another step up again. But first we have another construct, methods.
 
-### Function
+### Functions
 
 Methods are also useful constructs for pushing around your data. 
 Let's say at several points in your code you get your array of names and you print it out. And you also print our your array of last names. And your array of ages. And you do this same thing time and time again before your code finishes executing. You could just keep writing out this loop again and again and again and again and again..
