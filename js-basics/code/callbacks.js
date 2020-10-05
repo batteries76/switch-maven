@@ -72,3 +72,11 @@ arr2.myForEach(function(element) {
     // A console.log to show the behaviour
     console.log(element)
 })
+
+const x = function(a, cb){
+    cb(a)
+}
+
+x('red', function(arg) {
+    console.log(`This is ${arg}`)
+})

@@ -30,3 +30,14 @@ const twoFunc = function(fn) {
 const returnFunction = twoFunc(otherFunc)
 
 returnFunction()
+
+
+let x = {
+    a: "pineapple",
+    b: "apple",
+    c: function() {
+        console.log(this.b)
+    }
+}
+
+x.c()

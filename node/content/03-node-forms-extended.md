@@ -1,7 +1,6 @@
 ## Forms Extended Notes
 
 ### Forms Outline
-
 My first thought on this day is that the trie stuff might be overdoing it. I haven’t had much experience with them though, and they look really interesting (reminds me of my Comp Sci days). I’m happy to go with it though, and this is more just my initial feeling here. It will depend a lot on the students and where they are at with things so far. It’s a great schedule, but packed, and I wonder if they might be a little fried by this time. 
 
 With forms I would build out a very basic web form in HTML5. Along with this would be a discussion about HTML, and a little about browsers, parsing, and web communication. I’d keep this relatively brief. 
@@ -86,7 +85,6 @@ The `value` attribute is a way to set the data content of that input. You can se
 The `id` is just the `id`, for CSS and JS purposes. And for the `label`, as we will see..
 
 #### Label
-
 The `label` is a bit interesting. It seems a little old school, and you might wonder why have something specific to attach to the input - why not just use a `div`? Same effect, no? Well.. no. In defining a `label` and specifying which `input` it is attached to, you are connecting them programmatically, and this has the following effects: increased click area to focus the `input`; better for screenreaders; and better for assistive technology. The connection is made through the `id` attribute.
 
 You can read about more of the details here:
@@ -210,10 +208,10 @@ The way they are tied to being RESTful, as it's termed, is that you use a GET re
 
 We are yet to create a DB, so this relationship is just a wishlist for us at the moment, and we will be talking a lot more about this when we have a DB. But we have made a GET request, and we are currently making a POST request via this form, and so we need to start thinking in these terms now, even if it is a little confusing. 
 
-As you can see, it's a convention, a paradigm, and so it's something to be aimed at, but it is not strictly enforced. But it is strongly recommended that you follow this unless you have a very good reason not to. You will get used to this as we work through things over the coming days.
+As you can see, it's a convention, a paradigm, and so it's something to be aimed at, but it is not strictly enforced. It is strongly recommended that you follow this unless you have a very good reason not to. You will get used to this as we work through things over the coming days.
 
 ### Hang on though, API?
-API is Application Programming Interface, which is a slightly jargony way of saying that it's a digital place that you can get things from. As a result, this broad definition covers pretty much anything on the internet, and you will hear the same concept used in a variety of circumstances. In a more narrow version though, it's what we are building. We are making an API, and someone could some to our API, hit our routes, and get something in return. And when we make this API, we will be following convention and making it in a RESTful manner.
+API is Application Programming Interface, which is a slightly jargony way of saying that it's a digital place that you can get things from. As a result, this broad definition covers pretty much anything on the internet, and you will hear the same concept used in a variety of circumstances. In a more narrow version though, it's what we are building. We are making an API, and someone could come to our API, hit our routes, and get something in return. And when we make this API, we will be following convention and making it in a RESTful manner.
 
 ### Back to the form..
 
@@ -254,7 +252,7 @@ Let's put a `console.log` in the callback function for our route that receives t
 ```js
 console.log(req)
 ```
-We will see that it's absolutely enormous. There are a few bits and pieces in there I could explain, but there is also many many things that I can't even start to imagine what they are doing. It's worth a quick scroll just to have a look about. But let's look at the data we need:
+We will see that it's absolutely enormous. There are a few bits and pieces in there I could explain, but there is also many many things that I can't even start to imagine what they are doing. It's worth a quick scroll just to have a look at it all. But let's look at the data we need:
 ```js
 console.log(req.body)
 ```
@@ -360,6 +358,7 @@ We have already set up our little array
 
 However, although a perfectly acceptible want to make an app, what I we would ordinarily do is separate out the front end code from the back end. 
 ????
+axios/fetch..
 .....
 
 

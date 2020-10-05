@@ -1,5 +1,12 @@
 ## Node Servers
 
+### Contents
+- Node server
+- Code breakdown
+- Express server
+- package.json scripts (nodemon)
+- 
+
 ### Intro
 As we have discussed, a server is at its most basic just a computer that is set up to listen to the internet, and that will send a response when it receives an incoming request.
 
@@ -126,7 +133,7 @@ const server = http.createServer(
 ```
 So we have to see where that constant is being used.
 ```js
-server.listen(port, hostname, () => {
+server.listen(port, hostname, function() {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```

@@ -131,6 +131,22 @@ arr2.myForEach(function(element) {
 ```
 Just to be clear, there is a lot going on here, and it's not something you will do often. But it does highlight several features we have talked about so far in JS (functions on objects, this, callbacks), and gives a peek under the hood of JS itself. 
 
+### Callbacks and the DOM
+```js
+function add() {
+    alert('greetings')
+}
+​
+let btn = document.querySelector('button')
+btn.addEventListener("click", add)
+​
+// function addEventListener(type, func) {
+// 	// if "click" happens to btn
+// 	      // func()
+// 	//
+// }
+```
+
 ### Summary
 Here we discussed:
 - Callbacks

@@ -1,8 +1,21 @@
 ## Intro to Node
 
+### Summary
+- What is Node
+- Install Node
+- Running some Node files
+- Clients and servers
+- Protocols and formats
+- The HTTP Protocol
+- Parsing
+- URL
+- Packages (Yarn)
+- Challenges
+
+### Introduction
 Node is JS for the backend. While JS is the development language of the browser, NodeJS is the language of the OS (meaning it runs in the terminal). Node was created so that developers who already knew how to code using JS, could now use essentially the same language, but do so within the OS, rather than only in the browser (or needing to learn another back-end language).
 
-The main differences are that Node won't have access to those browser specific APIs that you have been working with, and like most other backend languages, it will have functionality for working with files and implementing APIs. There are a few other differences, but we will discover them as we go.
+The main differences are that Node won't have access to those browser specific APIs (the functions you've been using, like `addEventListener()`) that you have been working with, and like most other backend languages, it will have functionality for working with files and implementing APIs. There are a few other differences, but we will discover them as we go.
 
 ### Downloading Node
 
@@ -18,9 +31,11 @@ Here we are making a very simple Node file:
 ```js
 console.log('this is my first program in node')
 console.log('it runs from the command line')
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
+
 const randVal = getRandomInt(23)
 console.log(randVal)
 ```
@@ -28,16 +43,38 @@ console.log(randVal)
 And now we can run it from the command line.
 
 `> node myFirstProgram.js`
+We can see here that the output is now on the command line. The main thing that you'll have to get used to for now, is that the browser isn't involved, and so your terminal is your locus of control. 
 
-Examples, but don't overdo it.
-Maybe some file system examples. 
+Let's have a look at another example:
+```js
+const fs = require('fs')
 
-*****
+// fs.readFile takes the file path and the callback
+fs.readFile('hello.md', function(err, data) {
+
+	// if there's an error, log it and return
+	if (err) {
+		console.error(err)
+		return
+	}
+	// Print the string representation of the data
+	console.log(data.toString())
+})
+```
+Here we have quite a bit going on, but we can work through it slowly. The first line `const fs = require('fs')` is us taking advantage of the work of others. It's a bit of efficient laziness. Let's not get too deep in the weeds here, but we can talk about the syntax that we can see, and what might be happening. We will dig deeper later. The main point is that we are importing some code into our program, and can make use of the work done for us. 
+
+We can see that `require` is a function from the parentheses, and it is returning something into the const fs (which we could call anything, but because it's file system options, 'fs' makes sense). We can also see that `fs` is an object from this code: `fs.readFile(..)` as the dot gives it away. 
+
+`.readfile` is a function on that `fs` object, and we can see it takes two arguments, a string, and a callback. That callback is given two arguments, an error, `err`, and the file contents in the `data` variable. This `data` is actually a buffer, so we need to turn it into a string for us to read it. We aren't going to get into buffers now, but the short story is that they are an area in memory. We could also specify an encoding when we call `readfile`, and can return to this later.
+
+#### Some basic Node challenges
+To get into just being comfortable with Node, here are a few challenges:
+
+`challenges/basic-node-challenges.js`
 
 ### Clients and Servers
 
-#### Front and Back Ends
-
+#### Front End and Back End
 Before we continue with a few little exercises in Node, we are going to discuss a few concepts that will be useful, and then we will see if we can combine the concepts and Node, and make a little parser (or two).
 
 Now is a good time to introduce a few analogous ideas: client and server, and front-end and back-end.
@@ -51,18 +88,16 @@ To understand more fully, we need to have an idea what a server is. It's importa
 
 #### Server?
 
-A web server is merely a computer that has been set up to listen to incoming HTTP traffic (there are a few different types of server, but from here on server will mean web server). That's really all. It's a computere that is running a program, and that program is keeping a port open to the internet and listening to the traffic. 
+A web server is merely a computer that has been set up to listen to incoming HTTP traffic (there are a few different types of server, but from here on server will mean web server). That's really all. It's a computer that is running a program, and that program is keeping a port open to the internet and listening to the traffic. Of course this is more complicated underneath, but for now, as web devs, this is the part that interests us.
 
 To understand a little about what is happening with a web server, we need to talk a little about the internet more broadly. There is a lot that could be said here, and many levels to dive into. But for our purposes I think we can keep it relatively simple to start with, and dive a bit deeper down the track when the basics have sunk in. 
 
 #### The Internet? HTTP?
-
 The internet is run on the basis of the HTTP and TCP protocols. You may be familiar with these terms. Again, keeping it short, the TCP protocol is the way the data is sent, and HTTP tells us how to interpret the data that is sent via TCP. You can think of TCP as the water that the data swims through. TCP is the communication instructions, and HTTP is the format of the data being sent via that medium.
 
 To understand that a little more, we need an understanding of what a protocol is. A protocol is essentially just a shared understanding about the shape of some data, or the method to asssemble that data. If we are going to send any information, we need to have some way for both parties involved, the sender and the receiver, to be able to know how to assemble and then how to read that information. 
 
 #### Protocols and Formats
-
 We could make up a way to send some data that is called asterisk-ampersand protocol. We can decide ahead of time that the data that we send is going to be deliniated by '*', and each line of data will end with '&'. A file containing this data might look something like this:
 
 ```
@@ -71,7 +106,7 @@ chris*baker*77*2.2*2020&
 agnes*murphy*23*1.9*3889&
 ```
 
-As long as the person on the other end knows the symbols that help define the structure of the protocol, then they can use tools to simply arrange the data on the other end. Here the file we have is very similar to a format that you might be familiar with, and that is a CSV. Another common format is JSON, which we will get to soon enough. The main point to take away here is that we are trying to send data from one person to another, and we need a way to decide ahead of time how to structure the data so that both parties can make sense of it on the other end. We could have said that we would delineate columns with 'cat' and the end of a row with 'dog'. That would have it's issues, but could be done as long as people on each end of the communication understand the format. This last point is the most important: it is a shared understanding.
+As long as the person on the other end knows the symbols that help define the structure of the protocol, then they can use coding tools to simply arrange the data on the other end. Here the file we have is very similar to a format that you might be familiar with, and that is a CSV. Another common format is JSON, which we will get to soon enough. The main point to take away here is that we are trying to send data from one person to another, and we need a way to decide ahead of time how to structure the data so that both parties can make sense of it on the other end. We could have said that we would delineate columns with 'cat' and the end of a row with 'dog'. That would have it's issues, but could be done as long as people on each end of the communication understand the format. This last point is the most important: it is a shared understanding.
 
 Looking at the example above, we can see that this won't vanquish all of the potential issues that we might have around sending data. For example, the data itself is rather meaningless without more information. We might be able to deduce that the first column is a given name, and the second is a surname. The next column might be age, but also might not. And so on. So we might want to add to this protocol.
 
@@ -89,7 +124,6 @@ We have added a header to the file that helps to give some colour to the data th
 All of this is to go the long way around to helping understand HTTP, but the more important message is to understand that communication and data storage will most often involve a format, or a understood data structure, sometimes also called a protocol. 
 
 ### The Structure of HTTP
-
 The way HTTP operates is that the browser sends a request, and the server responds with a response. 
 
 The format for HTTP is:
@@ -151,6 +185,7 @@ The `package.json` file is the accumulation of all the dependencies for our proj
 `> yarn init`
 
 and answer the questions that are asked of us. Many can be ignored, but it is worth paying attention to what they are to get a feel for what is happening.
+
 This website goes into some more detail:
 
 https://classic.yarnpkg.com/en/docs/usage
@@ -166,7 +201,10 @@ which will save everyone a considerable amount of time.
 ### Exercise 1: Package search
 Search out a few interesting packages, and install them. Share any cool packages with your fellow students. Take note of the changes to the `package.json` file.
 
-### EXERCISE 2: Parse a URL
+### Exercise 2: Callback Boilerplate
+Give them a chance to have a look at `3-callback-boilerplate.js`
+
+### EXERCISE 3: Parse a URL
 The aim of this exercise is to drill home the idea of formats, protocols, and parsing. A URL is a nice simple one to have a go at, but also a little more complicated than people might think at first. This can be done in Node and the code can be talked through.
 
 To do this you will first need to understand the format of a URL. Then you will need to think about how to break it apart into its constituent pieces, and have a plan for how to put that into meaningful Node structure. As you go through this, try to think of edge cases that could trip you up. 
@@ -176,10 +214,10 @@ To make things a little bit simpler, I suggest hard coding a URL into your progr
 - Working in teams chat (if needed)
 - Edge cases chat (if needed)
 
-### Exercise 3: CSV parser (optional)
-Write a program to parse CSV files. This is more practice with Node, with formats, and with forming meaningful Node (JS) structures. This exercise will also require some work with file system functions, as in this scenario we will draw from the data-csv.csv that will be provided. This reinforces the back end nature of Node (processing files on the computer), and demonstrate a different format to be parsed.
+### Exercise 4: CSV parser (optional)
+Write a program to parse CSV files. This is more practice with Node, with formats, and with forming meaningful Node (JS) structures. This exercise will also require some work with file system functions, as in this scenario we will draw from the `data.csv` that will be provided. This reinforces the back end nature of Node (processing files on the computer), and demonstrate a different format to be parsed.
 
-### Exercise 4: Super extension
+### Exercise 5: Super extension
 Start writing a parser for an incoming HTTP request. This will involve investigating what an incoming request looks like, and breaking it into its constituent parts. It's worth noting here that HTTP requests are sent as strings. 
 
 If you get this far you could do the same for an HTTP response, and see how you go. 
@@ -198,11 +236,11 @@ First we talked about Node, which is backend JS. It is just a way to write JS co
 
 **Front and backends, formats and protocols, HTTP and the web**
 
-The front-end, or client, for our purposes, is the browser. The backend, that we now have the ability to control with Node, is often a server (which we are about to get to). The most basic pattern to understand about the internet is that browsers make HTTP requests, and servers (computers that are connected to the internet and listening to HTTP traffic), are waiting to send an HTTP response. 
+The front-end, or client, for our purposes, is the browser. The back-end, that we now have the ability to control with Node, is often a server (which we are about to get to). The most basic pattern to understand about the internet is that browsers make HTTP requests, and servers (computers that are connected to the internet and listening to HTTP traffic), are waiting to send an HTTP response. 
 
 But to be able to efficiently understand the messages being send to and fro, it helps to have a set format, or protocol. In this case we have the HTTP protocol. But the concept of protocols and formats is a more general one, and we can see several instances of this same concept (CSVs, URLs, and HTTP). 
 
-In this class we put them all together. We installed and ran Node, and then used Node to *parse* data in various format, which means to take that format and turn it into something that is useful within the language we are using. 
+In this class we put them all together. We installed and ran Node, and then used Node to *parse* data in various formats, which means to take that format and turn it into something that is useful within the language we are using. 
 
 ### Next
 Next up we see these elements in action on the internet.. 
