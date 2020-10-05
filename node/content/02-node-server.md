@@ -5,7 +5,9 @@
 - Code breakdown
 - Express server
 - package.json scripts (nodemon)
-- 
+- Routes
+- Query string
+- Request methods
 
 ### Intro
 As we have discussed, a server is at its most basic just a computer that is set up to listen to the internet, and that will send a response when it receives an incoming request.
