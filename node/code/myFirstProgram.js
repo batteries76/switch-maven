@@ -1,6 +1,15 @@
 console.log('it runs from the command line')
-function getRandomInt(max) {
+
+const getRandomInt = function(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-const randVal = getRandomInt(23)
+
+let randVal = getRandomInt(23)
 console.log(randVal)
+
+const adder = function(arg1, arg2) {
+  return arg1 + arg2
+}
+
+let adderResult = adder(6, 7)
+console.log(adderResult)

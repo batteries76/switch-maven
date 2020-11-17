@@ -28,7 +28,6 @@ We have set up our MongoDB locally, and we are also set up in the cloud. We have
 First lets talk more generally about what it is that we are doing here. 
 
 ### DBs
-
 We have talked about DBs and why they are useful (for persistence of data, and because they are set up to store and retrieve that data quickly). If we were using the another type of DB, we also might like a tool to help us be able to still write in the JS that we are used to, and that can make these queries in and out of the DB easier for us. Were we to be using an SQL based DB, then we would like a tool to be able to write JS, and end up with that making the SQL calls to the DB. 
 
 Here, as we know, we have a document DB, and so instead of tables, we have objects that resemble the objects that we have been learning about in our JS content. But, they are not exactly the same, and obviously we have been using the great, but somewhat clunky, MongoDB commands to get things in and out of the DB.

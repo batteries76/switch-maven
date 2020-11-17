@@ -1,7 +1,7 @@
 ## Intro to Node
 
 ### Summary
-- What is Node
+- What is Node?
 - Install Node
 - Running some Node files
 - Clients and servers
@@ -71,6 +71,16 @@ We can see that `require` is a function from the parentheses, and it is returnin
 To get into just being comfortable with Node, here are a few challenges:
 
 `challenges/basic-node-challenges.js`
+
+### Useful terminal commands
+- `> ls` : list all the files and directories in the current directory
+- `> mkdir <dir-name>`: make a new directory
+- `> cd <dir-name>`: change location into this new directory
+- `> touch <file-name>`: create a new file called file-name.
+- `> New-Item <file-name>`: (Windows) create a new file called file-name.
+- `> cd ..`: go back up the filesystem one level.
+- `> rmdir <dir-name>`: remove a directory (directory much be empty).
+- `> rm <file-name>`: remove a file (cannot be undone).
 
 ### Clients and Servers
 
@@ -204,8 +214,10 @@ Search out a few interesting packages, and install them. Share any cool packages
 ### Exercise 2: Callback Boilerplate
 Give them a chance to have a look at `3-callback-boilerplate.js`
 
-### EXERCISE 3: Parse a URL
+### Exercise 3: Parse a URL
 The aim of this exercise is to drill home the idea of formats, protocols, and parsing. A URL is a nice simple one to have a go at, but also a little more complicated than people might think at first. This can be done in Node and the code can be talked through.
+
+*Please don't use an inbuilt URL package.*
 
 To do this you will first need to understand the format of a URL. Then you will need to think about how to break it apart into its constituent pieces, and have a plan for how to put that into meaningful Node structure. As you go through this, try to think of edge cases that could trip you up. 
 

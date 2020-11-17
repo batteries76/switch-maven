@@ -132,19 +132,25 @@ arr2.myForEach(function(element) {
 Just to be clear, there is a lot going on here, and it's not something you will do often. But it does highlight several features we have talked about so far in JS (functions on objects, this, callbacks), and gives a peek under the hood of JS itself. 
 
 ### Callbacks and the DOM
+Here we have a practical example of where callbacks are used to interact with the DOM. You have seen an example like this in class:
 ```js
-function add() {
+// Create a basic function
+const add = function() {
     alert('greetings')
 }
-​
+// ​find the button element in the DOM, and store the resultant object in 'btn'
 let btn = document.querySelector('button')
+// 
 btn.addEventListener("click", add)
-​
-// function addEventListener(type, func) {
-// 	// if "click" happens to btn
-// 	      // func()
-// 	//
-// }
+```
+We see here that we 
+
+```js
+const addEventListener = function(type, func) {
+	if (type === "click") {
+        func()
+    }
+}
 ```
 
 ### Summary
@@ -152,3 +158,4 @@ Here we discussed:
 - Callbacks
 - Passing arguments to the callback function
 - Prototypes and 'this'
+- Callbacks and the DOM
