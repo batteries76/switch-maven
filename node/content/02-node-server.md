@@ -282,7 +282,7 @@ I've made the second route `/grasshopper` because it is totally random, to demon
 
 Outside of the root route though, it's all up to us. We could call a route `'/here-is-a-big-long-route'` or we could use `'/e'`. For now we have only the twoo routes above. Go to each in the browser. Let me know if you have any difficulty, or questions.
 
-Now try going to a route that we haven't accounted for on the backend, say `http://localhost:3000/xyz`. What is happens in the browser?
+Now try going to a route that we haven't accounted for on the backend, say `http://localhost:3000/xyz`. What is happening in the browser?
 Express is helping us out a bit here. It is sending a response for us when the path designated in the browser does not match the available routes in our `server.js`.
 
 What we are seeing here is the first way that the browser can send some information to the backend. By going to `http://localhost:3000` it is connecting to our server. But then by adding a path, the browser is sending some more information to the server, and we now have the power to react to that on the back end. 

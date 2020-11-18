@@ -1,0 +1,31 @@
+GET http://localhost:3000/albums HTTP/1.1
+
+###
+
+POST http://localhost:3000/albums HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Fear Innoculum",
+    "artist": "Tool",
+    "year": 2020,
+    "genre": "Rock"
+}
+
+###
+
+GET http://localhost:3000/practice-getting-params-route/large-book/666555444/elegent HTTP/1.1
+
+###
+
+DELETE http://localhost:3000/albums/5f90292de1e990f36ceefce6 HTTP/1.1
+
+###
+
+PATCH http://localhost:3000/albums/5f90292de1e990f36ceefce6 HTTP/1.1
+
+{
+    "genre": "Metal"
+}
+
+###

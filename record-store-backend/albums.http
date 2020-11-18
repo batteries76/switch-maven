@@ -1,0 +1,43 @@
+GET http://localhost:4400/albums HTTP/1.1
+
+###
+
+POST http://localhost:4400/seed-one-draw HTTP/1.1
+Content-Type: application/json
+
+{}
+
+###
+
+POST http://localhost:4400/albums HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Fear Innoculum",
+    "artist": "Tool",
+    "year": "2019",
+    "genre": "rock"
+}
+
+###
+
+GET http://localhost:4400/practice-getting-params-route/large-book/666555444/elegent HTTP/1.1
+
+###
+
+DELETE http://localhost:4400/albums/5f96c60321ca44481d477252 HTTP/1.1
+
+###
+
+PATCH http://localhost:4400/albums/5f980c41ec2b3d18927087f5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "artist": "Tool"
+}
+
+###
+
+GET http://localhost:4400/artists HTTP/1.1
+
+###

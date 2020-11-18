@@ -1,0 +1,29 @@
+body {
+    background-color: red;
+}
+
+.album-title {
+    display: flex;
+    align-items: center;
+}
+
+.album-title h2 {
+    margin-right: 10px;
+}
+
+.edit-input {
+    display: flex;
+    align-items: center;
+}
+
+.edit-button {
+    display: inline-block;
+}
+
+.vanish {
+    display: none;
+}
+
+.edit-input p, input {
+    margin-right: 8px;
+}

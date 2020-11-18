@@ -1,0 +1,8 @@
+## Query Strings
+To add a bit more functionality to our back end. We know from yesterday that a URL can contain what is known as a query string. We also know that Express is doing us a favour and creating a request object for us. Use the docs for URLs and for Express (or any resource you choose), and see if you can complete the following tasks:
+1. Send a query string along with the `/grasshopper` path, and have it set the key `number` to 3. (Please ask me if this isn't clear.) In the `'/grasshopper'` route in your Express app, send back the contents of the query string (any way you like).
+2. Send a query string along with the /queries-checker path (you might need to make the route), and have it set the key number to a value between 1 and 3. In the '/queries-checker' route, respond to the different values by sending back a different string depending on the number set in the query string. Extend this by sending back some HTML and changing the heading number (<h1>, <h2>, <h3>) to match the incoming value.
+3. Make an array of fruits at the top of your file. Make a route to filter these fruits. In this route, send a query string that sets a letter by which to filter the fruits in this array. In this route, access that query, and filter the fruits so that you only send back fruits that start with that letter.
+
+### Advanced
+4. Make a new route to send back these fruits wrapped in HTML. See if you can work out how to send back the list of fruits as an HTML list. You can go further and respond to a number in the query string by sending only that number of fruits from the list, or filtering the list based on a letter. Take this challenge as far as you would like.
