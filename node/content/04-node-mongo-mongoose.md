@@ -30,11 +30,16 @@ MongoDB is a NoSQL document database that stores its data in structures that res
 
 This structure means that you have some more options in how you structure your data than with the tabular data of relational databases. You have the option to nest data, much like you might have an object that has an array within it. There is also no limit to the nesting that you can do - it will depend on how you want to represent the data, and what data will need to be retrieved quickly.
 
+<<<<<<< HEAD
 There are two main structures within a Mongo database. 
 - Collections
 - Documents
 
 _Collections_ are designed to hold homogenous data, a bit like an array. If you like, you can think of collections as arrays of documents. _Documents_ are very much like the individual objects within an array. 
+=======
+### DBs
+We have talked about DBs and why they are useful (for persistence of data, and because they are set up to store and retrieve that data quickly). If we were using the another type of DB, we also might like a tool to help us be able to still write in the JS that we are used to, and that can make these queries in and out of the DB easier for us. Were we to be using an SQL based DB, then we would like a tool to be able to write JS, and end up with that making the SQL calls to the DB. 
+>>>>>>> 1a9fdb18db096f243a6ab82febb6d269890b68e5
 
 A strucuture like the following (in JS):
 ```js

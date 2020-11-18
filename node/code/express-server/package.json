@@ -1,14 +1,11 @@
 {
-  "name": "week-3-code",
+  "name": "express-server",
   "version": "1.0.0",
-  "description": "code for the week three of class",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "callback-source": "^1.1.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.1",
-    "node-geocoder": "^3.27.0",
     "nodemon": "^2.0.4"
   },
   "scripts": {
